@@ -6,4 +6,4 @@ somaDigitos n = sum . map digitToInt $ show n
 
 main = do
     print (somaDigitos 1234) -- 10
-    print (somaDigitos 1020) -- 3
+    print (somaDigitos 123459999999999999) -- 3
