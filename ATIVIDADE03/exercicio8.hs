@@ -10,11 +10,13 @@ collatz n = n:sequencia
             | even n = collatz (n `div` 2)
             | otherwise = collatz (n*3 + 1)
 
--- retorna tamanha da lista gerada pela funcao collatz
+-- retorna tamanho da lista gerada pela funcao collatz
 collatzLen :: Int -> Int
 collatzLen n = length (collatz n)
 
-
+-- compara vetor (1,1) com o vetor resultante de (collatzLen, n)
+-- Foldl recebe o valor do pmax e verifica um a um com o vetor xs, 
+-- no caso, 1 a 1M.
 pmax x n = x `max` ( collatzLen n, n )
 solve xs = foldl pmax (1,1) xs
 
