@@ -3,7 +3,7 @@
 
 
 str = "0123456789"
-toString a = [ read [x] :: Int | x<- a ]
+toInt a = [ read [x] :: Int | x<- a ]
 
 main = do
-    print(toString(str))
+    print(toInt(str))
