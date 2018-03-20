@@ -4,8 +4,8 @@
 
 str = "Universidade Federal"
 
-concatenador :: String -> String
-concatenador str = filter (/= ' ') str
+concatenador :: String -> String -> String
+concatenador str1 str2 = str1 ++ " " ++ str2
 
 main = do
-    print (concatenador(str))
+    print (concatenador "Universidade" "Federal")
