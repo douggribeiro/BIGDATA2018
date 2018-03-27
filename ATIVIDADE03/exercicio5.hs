@@ -7,5 +7,6 @@ vetorB = [2,3,4]
 produtoEscalarXYZ :: [Int] -> [Int] -> Int
 produtoEscalarXYZ a b = sum $ zipWith (*) a b
 
+
 main = do
     print(produtoEscalarXYZ vetorA vetorB)

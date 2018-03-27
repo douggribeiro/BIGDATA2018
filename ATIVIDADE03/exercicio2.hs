@@ -8,7 +8,7 @@ divisivel20 x
     | b == 20 = True
     | otherwise = False
     where 
-    b = length [ a | a <- [1..20], x `mod` a  == 0]
+        b = length [ a | a <- [1..20], x `mod` a  == 0]
 
 -- foldr1 pega dois itens da lista e aplica a funcao do minimo divisor comum lcm
 projectEuler5 :: Int -> Int

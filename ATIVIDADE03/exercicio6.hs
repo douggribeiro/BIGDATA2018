@@ -11,6 +11,7 @@ collatz n = n:sequencia
             | even n = collatz (n `div` 2)
             | otherwise = collatz (n*3 + 1)
 
+
 main = do
     print(collatz 2)
     print(collatz 4)

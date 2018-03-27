@@ -7,7 +7,7 @@ divisivel20 x
     | b == 20 = True
     | otherwise = False
     where 
-    b = length [ a | a <- [1..20], x `mod` a  == 0]
+        b = length [ a | a <- [1..20], x `mod` a  == 0]
 
 
 main = do
