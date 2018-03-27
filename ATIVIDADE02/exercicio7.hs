@@ -1,14 +1,13 @@
 -- Exercício 07: Faça uma função que calcule o coeficiente binomial de (m,n).
 
-
 fatorial :: Int -> Int 
 fatorial 0 = 1
 fatorial 1 = 1
 fatorial n = n * fatorial (n-1)
 
-
 coefBinominal :: Int -> Int -> Int
 coefBinominal m n = fatorial(m) `div` ((fatorial n) * (fatorial (m-n)))
+
 
 main = do
     print (coefBinominal 5 2)   -- 10

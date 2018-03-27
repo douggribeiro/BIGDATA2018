@@ -2,13 +2,14 @@
 
 ehPrimo :: Int -> String
 ehPrimo a 
-    | b == True = "Eh primo"
+    | b  = "Eh primo"
     | otherwise = "Nao eh primo"
     where 
-    b = null [ x | x <- [2..a - 1], a `mod`x  == 0]
+        b = null [ x | x <- [2..a - 1], a `mod` x  == 0 ]
 
 
 main = do
     print(ehPrimo 10)
     print(ehPrimo 11)
     print(ehPrimo 13)
+    print(ehPrimo 2)

@@ -2,7 +2,7 @@
 
 import Data.Char (digitToInt) -- util para transformar cada digito em elemento de lista
 
-
+somaDigitos :: Int -> Int
 somaDigitos n = sum . map digitToInt $ show n
 
 -- enquanto numero final maior que 10, continue fazendo a persistencia
@@ -12,12 +12,10 @@ persistenciaDigitos x i
     | otherwise = i 
           
          
-
-
 main = do 
     let i = 1
-    print ( persistenciaDigitos 123456789 i) -- 123456789 vira 45 que vira 9 (duas vezes)
-    print ( persistenciaDigitos 123 i)       -- 123 vira 6 (uma vez)
+    print ( persistenciaDigitos 123456789 i) -- soma de 123456789 eh 45 e depois sua soma eh 9 (duas vezes)
+    print ( persistenciaDigitos 123 i)       -- soma de 123 eh e depois sua soma eh 6 (uma vez)
 
 
 
