@@ -1,10 +1,7 @@
--- Exercício 06: Faça uma função que recebe um tipo Integer 
--- e retorna ele dividido por 2:
-
-
+-- Exercício 06: Faça uma função que recebe um tipo Integer e retorna ele dividido por 2:
 
 div2d :: Integer -> Double
-div2d a = (fromIntegral a) / 2
+div2d a = (fromIntegral a) / 2 -- converte numero inteiro para classe Num
 
 main = do
     print (div2d 4)

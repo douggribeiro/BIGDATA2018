@@ -3,7 +3,7 @@
 
 check :: Integer -> Bool
 check a 
-    | (a < -1) || (a > 1) && isDiv 2 = True 
+    | (a < -1) || (isDiv 2 && a > 1) = True 
     | otherwise = False 
     where
         isDiv n = a `rem` n == 0
@@ -13,6 +13,3 @@ main = do
     print (check 4)
     print (check 3)
 
---True
---True
---False
