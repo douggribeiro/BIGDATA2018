@@ -1,7 +1,7 @@
 -- Exercício 02: Faça uma função que calcule a soma da diagonal principal de uma matriz.
 
 
-
+-- Explicacao da logica:
 -- zipWith pega uma linha da matrix, aplica drop de 0 a "infinito" para cada linha. Para cada linha processada, aplica head obtendo apenas o primeiro elemento.
 -- Por exemplo, uma matrix [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
 -- a primeira linha [1,2,3,4] apenas o head é aplicado, resultando em 1;
