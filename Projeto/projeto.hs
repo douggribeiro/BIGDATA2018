@@ -7,8 +7,8 @@ import Data.Map (Map, (!))
 import Text.CSV
 
 -- Novos tipos
-type Classe = String
 type Atributo = String
+type Classe = String
 type Entropia = Double
 type DataSet = [([String], Classe)]
 
@@ -29,7 +29,7 @@ splitEntropia m = M.map calculaEntropia m
 -- Classificação de dados utilizando algoritmo ID3
 -- processo para importar CSV
 main = do
-  arquivoCSV <- parseCSVFromFile "input.csv"
+  arquivoCSV <- parseCSVFromFile "arquivo33M.csv"
   either (error "Arquivo Invalido! Nao eh CSV") iniciaProcesso arquivoCSV
 
 
@@ -52,9 +52,9 @@ calculaEntropia xs = sum $ map (\x -> probabilidade x * info x) xs
 -- Subtrai entropia anterior com a nova entropia calculada
 ganhoInfo :: [Classe] -> [(Atributo, Classe)] -> Double
 ganhoInfo s a = calculaEntropia s - novaInfo
-  where mapEntropia = splitEntropia $ m
-        m = splitAtributo a   
-        somaEntropia = M.map (\x -> (fromIntegral.length) x / (fromIntegral.length) s) m 
+  where mapEntropia = splitEntropia $ atributos
+        atributos = splitAtributo a   
+        somaEntropia = M.map (\x -> (fromIntegral.length) x / (fromIntegral.length) s) atributos 
         novaInfo = M.foldrWithKey (\k a b -> b + a*(mapEntropia!k)) 0 somaEntropia
 
 
