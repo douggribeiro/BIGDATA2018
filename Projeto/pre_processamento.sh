@@ -3,7 +3,7 @@
 # =======================================================
 #  Script para gerar dados no formato utilizado pelo
 #  classificador ID3. Esse codigo sera convertido
-#  em haskell visto que processa mais de 33M linhas 
+#  em haskell visto que processa mais de 33M linhas  
 # =======================================================
 
 

@@ -26,19 +26,6 @@ splitEntropia :: Map Atributo [Classe] -> M.Map Atributo Entropia
 splitEntropia m = M.map calculaEntropia m
 
 
--- Classificação de dados utilizando algoritmo ID3
--- processo para importar CSV
-main = do
-  arquivoCSV <- parseCSVFromFile "arquivo33M.csv"
-  either (error "Arquivo Invalido! Nao eh CSV") iniciaProcesso arquivoCSV
-
-
-iniciaProcesso csv = do
-  let dadosCSV = map (\x -> (init x, last x)) -- separa dados em tupla com atributo e classificador
-  let limpaCSV = filter (\x -> length x > 1)  -- remove atributos vazios. Sem isso da erro index
-  let dadosLimpos = dadosCSV $ limpaCSV csv   -- tuplas prontas para uso
-
-
 -- Calculo Entropia : Soma -Pi*log2*Pi
 calculaEntropia :: (Eq e) => [e] -> Entropia
 calculaEntropia xs = sum $ map (\x -> probabilidade x * info x) xs
